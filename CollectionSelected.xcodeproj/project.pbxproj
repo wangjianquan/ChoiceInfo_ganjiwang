@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C8C54481FE7ED4C00F7224C /* WJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C54471FE7ED4C00F7224C /* WJPickerView.swift */; };
 		7D9A24141FE51B6400B24291 /* PickerInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A24121FE51B6400B24291 /* PickerInfoController.swift */; };
 		7DD3746F1FE37C2E00E0EC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD3746E1FE37C2E00E0EC2A /* AppDelegate.swift */; };
 		7DD374711FE37C2E00E0EC2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD374701FE37C2E00E0EC2A /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C8C54471FE7ED4C00F7224C /* WJPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJPickerView.swift; sourceTree = "<group>"; };
 		7D9A24121FE51B6400B24291 /* PickerInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerInfoController.swift; sourceTree = "<group>"; };
 		7DD3746B1FE37C2E00E0EC2A /* CollectionSelected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionSelected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD3746E1FE37C2E00E0EC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				7DE04BFD1FE773F300D59490 /* ChoiceInfoCell.swift */,
 				7DE04BFC1FE773F300D59490 /* ChoiceInfoCell.xib */,
 				7D9A24121FE51B6400B24291 /* PickerInfoController.swift */,
+				7C8C54471FE7ED4C00F7224C /* WJPickerView.swift */,
 				7DE04C021FE7A07900D59490 /* WJDatePickerView.swift */,
 				7DD374721FE37C2E00E0EC2A /* Main.storyboard */,
 				7DD374801FE37D8700E0EC2A /* CollectionViewCell.swift */,
@@ -162,6 +165,7 @@
 				7DE04C031FE7A07900D59490 /* WJDatePickerView.swift in Sources */,
 				7D9A24141FE51B6400B24291 /* PickerInfoController.swift in Sources */,
 				7DE04C011FE773F400D59490 /* ChoiceInfoCollectionVC.swift in Sources */,
+				7C8C54481FE7ED4C00F7224C /* WJPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,11 +304,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CollectionSelected/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ulinix.CollectionSelected;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -314,11 +319,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CollectionSelected/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ulinix.CollectionSelected;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
