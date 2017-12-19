@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C8C54481FE7ED4C00F7224C /* WJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C54471FE7ED4C00F7224C /* WJPickerView.swift */; };
+		7D1F29201FE8F1C200CFD4C4 /* Pub_RentingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1F291F1FE8F1C200CFD4C4 /* Pub_RentingVC.swift */; };
+		7D1F292E1FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1F29221FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.xib */; };
+		7D1F292F1FE8F1DF00CFD4C4 /* ChoiceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1F29231FE8F1DF00CFD4C4 /* ChoiceItemCell.swift */; };
+		7D1F29311FE8F1DF00CFD4C4 /* ChoiceItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1F29251FE8F1DF00CFD4C4 /* ChoiceItemCell.xib */; };
+		7D1F29321FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1F29261FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.swift */; };
+		7D1F29331FE8F1DF00CFD4C4 /* PubInfoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1F29271FE8F1DF00CFD4C4 /* PubInfoCollectionCell.swift */; };
+		7D1F29341FE8F1DF00CFD4C4 /* PubInfoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1F29281FE8F1DF00CFD4C4 /* PubInfoCollectionCell.xib */; };
+		7D68AE761FE8AA780013E015 /* FromBottomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68AE751FE8AA780013E015 /* FromBottomAnimator.swift */; };
+		7D68AE781FE8B8CC0013E015 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68AE771FE8B8CC0013E015 /* CustomNavigationBar.swift */; };
 		7D9A24141FE51B6400B24291 /* PickerInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A24121FE51B6400B24291 /* PickerInfoController.swift */; };
 		7DD3746F1FE37C2E00E0EC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD3746E1FE37C2E00E0EC2A /* AppDelegate.swift */; };
-		7DD374711FE37C2E00E0EC2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD374701FE37C2E00E0EC2A /* ViewController.swift */; };
 		7DD374741FE37C2E00E0EC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD374721FE37C2E00E0EC2A /* Main.storyboard */; };
 		7DD374761FE37C2E00E0EC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD374751FE37C2E00E0EC2A /* Assets.xcassets */; };
 		7DD374791FE37C2E00E0EC2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD374771FE37C2E00E0EC2A /* LaunchScreen.storyboard */; };
@@ -21,10 +30,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C8C54471FE7ED4C00F7224C /* WJPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJPickerView.swift; sourceTree = "<group>"; };
+		7D1F291F1FE8F1C200CFD4C4 /* Pub_RentingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pub_RentingVC.swift; sourceTree = "<group>"; };
+		7D1F29221FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PubChoiceCollectionCell.xib; sourceTree = "<group>"; };
+		7D1F29231FE8F1DF00CFD4C4 /* ChoiceItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceItemCell.swift; sourceTree = "<group>"; };
+		7D1F29251FE8F1DF00CFD4C4 /* ChoiceItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceItemCell.xib; sourceTree = "<group>"; };
+		7D1F29261FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubChoiceCollectionCell.swift; sourceTree = "<group>"; };
+		7D1F29271FE8F1DF00CFD4C4 /* PubInfoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubInfoCollectionCell.swift; sourceTree = "<group>"; };
+		7D1F29281FE8F1DF00CFD4C4 /* PubInfoCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PubInfoCollectionCell.xib; sourceTree = "<group>"; };
+		7D68AE751FE8AA780013E015 /* FromBottomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromBottomAnimator.swift; sourceTree = "<group>"; };
+		7D68AE771FE8B8CC0013E015 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		7D9A24121FE51B6400B24291 /* PickerInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerInfoController.swift; sourceTree = "<group>"; };
 		7DD3746B1FE37C2E00E0EC2A /* CollectionSelected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionSelected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD3746E1FE37C2E00E0EC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7DD374701FE37C2E00E0EC2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7DD374731FE37C2E00E0EC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DD374751FE37C2E00E0EC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD374781FE37C2E00E0EC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +65,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1F29211FE8F1DF00CFD4C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D1F29261FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.swift */,
+				7D1F29221FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.xib */,
+				7D1F29231FE8F1DF00CFD4C4 /* ChoiceItemCell.swift */,
+				7D1F29251FE8F1DF00CFD4C4 /* ChoiceItemCell.xib */,
+				7D1F29271FE8F1DF00CFD4C4 /* PubInfoCollectionCell.swift */,
+				7D1F29281FE8F1DF00CFD4C4 /* PubInfoCollectionCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7DD374621FE37C2E00E0EC2A = {
 			isa = PBXGroup;
 			children = (
@@ -67,14 +98,18 @@
 			isa = PBXGroup;
 			children = (
 				7DD3746E1FE37C2E00E0EC2A /* AppDelegate.swift */,
-				7DD374701FE37C2E00E0EC2A /* ViewController.swift */,
+				7D68AE771FE8B8CC0013E015 /* CustomNavigationBar.swift */,
+				7D1F291F1FE8F1C200CFD4C4 /* Pub_RentingVC.swift */,
+				7D1F29211FE8F1DF00CFD4C4 /* Views */,
 				7DE04BFE1FE773F400D59490 /* ChoiceInfoCollectionVC.swift */,
 				7DE04BFD1FE773F300D59490 /* ChoiceInfoCell.swift */,
 				7DE04BFC1FE773F300D59490 /* ChoiceInfoCell.xib */,
 				7D9A24121FE51B6400B24291 /* PickerInfoController.swift */,
+				7C8C54471FE7ED4C00F7224C /* WJPickerView.swift */,
 				7DE04C021FE7A07900D59490 /* WJDatePickerView.swift */,
 				7DD374721FE37C2E00E0EC2A /* Main.storyboard */,
 				7DD374801FE37D8700E0EC2A /* CollectionViewCell.swift */,
+				7D68AE751FE8AA780013E015 /* FromBottomAnimator.swift */,
 				7DD374751FE37C2E00E0EC2A /* Assets.xcassets */,
 				7DD374771FE37C2E00E0EC2A /* LaunchScreen.storyboard */,
 				7DD3747A1FE37C2E00E0EC2A /* Info.plist */,
@@ -142,6 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD374791FE37C2E00E0EC2A /* LaunchScreen.storyboard in Resources */,
+				7D1F29341FE8F1DF00CFD4C4 /* PubInfoCollectionCell.xib in Resources */,
+				7D1F292E1FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.xib in Resources */,
+				7D1F29311FE8F1DF00CFD4C4 /* ChoiceItemCell.xib in Resources */,
 				7DD374761FE37C2E00E0EC2A /* Assets.xcassets in Resources */,
 				7DD374741FE37C2E00E0EC2A /* Main.storyboard in Resources */,
 				7DE04BFF1FE773F400D59490 /* ChoiceInfoCell.xib in Resources */,
@@ -155,13 +193,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DD374711FE37C2E00E0EC2A /* ViewController.swift in Sources */,
+				7D68AE761FE8AA780013E015 /* FromBottomAnimator.swift in Sources */,
+				7D1F29321FE8F1DF00CFD4C4 /* PubChoiceCollectionCell.swift in Sources */,
+				7D1F292F1FE8F1DF00CFD4C4 /* ChoiceItemCell.swift in Sources */,
+				7D1F29331FE8F1DF00CFD4C4 /* PubInfoCollectionCell.swift in Sources */,
 				7DE04C001FE773F400D59490 /* ChoiceInfoCell.swift in Sources */,
 				7DD3746F1FE37C2E00E0EC2A /* AppDelegate.swift in Sources */,
+				7D68AE781FE8B8CC0013E015 /* CustomNavigationBar.swift in Sources */,
 				7DD374811FE37D8700E0EC2A /* CollectionViewCell.swift in Sources */,
 				7DE04C031FE7A07900D59490 /* WJDatePickerView.swift in Sources */,
 				7D9A24141FE51B6400B24291 /* PickerInfoController.swift in Sources */,
 				7DE04C011FE773F400D59490 /* ChoiceInfoCollectionVC.swift in Sources */,
+				7C8C54481FE7ED4C00F7224C /* WJPickerView.swift in Sources */,
+				7D1F29201FE8F1C200CFD4C4 /* Pub_RentingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,12 +343,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KCN8UWT8XC;
 				INFOPLIST_FILE = CollectionSelected/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ulinix.CollectionSelected;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,12 +359,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KCN8UWT8XC;
 				INFOPLIST_FILE = CollectionSelected/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ulinix.CollectionSelected;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

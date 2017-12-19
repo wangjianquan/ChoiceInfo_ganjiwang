@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ALKATIP Basma Tom.TTF">
+            <string>ALKATIPBasmaTom</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="133" id="KGk-i7-Jjw" customClass="PubChoiceCollectionCell" customModule="CollectionSelected" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="132.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دسداسدادساسد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-En-pI7">
+                        <rect key="frame" x="15" y="10" width="290" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="Xbb-rB-VUQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ALKATIPBasmaTom" family="ALKATIP Basma Tom" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="s1c-QK-SrJ">
+                        <rect key="frame" x="0.0" y="33" width="320" height="99.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vWb-fa-lVY">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="kYO-FN-Ior"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="c5X-mE-BVX"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="s1c-QK-SrJ" secondAttribute="trailing" id="1tZ-o6-a8G"/>
+                    <constraint firstAttribute="bottom" secondItem="s1c-QK-SrJ" secondAttribute="bottom" id="49T-aD-fNl"/>
+                    <constraint firstItem="s1c-QK-SrJ" firstAttribute="top" secondItem="GTR-En-pI7" secondAttribute="bottom" constant="5" id="68Y-Ig-Nlg"/>
+                    <constraint firstAttribute="trailing" secondItem="GTR-En-pI7" secondAttribute="trailing" constant="15" id="Cwt-wS-jn8"/>
+                    <constraint firstItem="GTR-En-pI7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="YYU-Mb-PKq"/>
+                    <constraint firstItem="s1c-QK-SrJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oCi-3e-0m6"/>
+                    <constraint firstItem="GTR-En-pI7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="vUd-Jh-0PE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collection" destination="s1c-QK-SrJ" id="9Cg-72-dsu"/>
+            </connections>
+            <point key="canvasLocation" x="88" y="17"/>
+        </tableViewCell>
+    </objects>
+</document>

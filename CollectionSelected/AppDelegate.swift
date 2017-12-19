@@ -44,3 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+func getLinesWithThree(_ array: NSMutableArray) -> CGFloat {
+    if array.count % 3 == 0 {
+        return CGFloat(array.count/3)
+    }
+    return CGFloat((array.count/3) + 1)
+}
+
+
