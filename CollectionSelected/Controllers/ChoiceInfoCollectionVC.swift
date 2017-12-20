@@ -12,14 +12,10 @@ import UIKit
 fileprivate  let  choiceInfo_Item_width  : CGFloat = (UIScreen.main.bounds.size.width) / 3
 let  choiceInfo_Item_height : CGFloat = 60
 
-protocol ChoiceInfoSelectItemDelegate: NSObjectProtocol {
-    //edit : bool 是否可编辑
-    func didSelectItem(_ cell: ChoiceInfoCell, _ item_Id: NSInteger, _ edit: Bool)
-}
-
 class ChoiceInfoCollectionVC: UICollectionView ,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+   
     
-    weak var selectDelegate: ChoiceInfoSelectItemDelegate?
+    
     lazy var data_Source: NSMutableArray = NSMutableArray()
    
     //选中的 item
@@ -28,10 +24,17 @@ class ChoiceInfoCollectionVC: UICollectionView ,UICollectionViewDelegate, UIColl
     var field_Is_Used:Bool = false
 
     var isEditFirst: Bool = false
-    var cell: ChoiceInfoCell?
+    var currentIndex: IndexPath? {
+        didSet{
+            collectionView(self, didSelectItemAt: currentIndex!)
+        }
+    }
+    
+    var selectedItemBlock: ((_ cell: ChoiceInfoCell , _ index: IndexPath, _ type: String) -> ())?
     
     
     fileprivate func setupUI() {
+        
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator  = false
         self.delegate = self
@@ -39,6 +42,7 @@ class ChoiceInfoCollectionVC: UICollectionView ,UICollectionViewDelegate, UIColl
         self.backgroundColor = UIColor.white
         //允许多选
         self.allowsMultipleSelection = true
+        self.isScrollEnabled = false
         self .register(UINib.init(nibName: choiceInfoCell_Id, bundle: nil), forCellWithReuseIdentifier: choiceInfoCell_Id)
         self.reloadData()
     }
@@ -62,10 +66,8 @@ class ChoiceInfoCollectionVC: UICollectionView ,UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: choiceInfoCell_Id, for: indexPath) as? ChoiceInfoCell
-        
-        cell?.title.text = "\(data_Source[indexPath.row])"
-        cell?.textField.placeholder = "选择"
-        cell?.isUseEnabled = field_Is_Used
+        cell?.choiceModel = data_Source[indexPath.row] as? ChoiceModel
+        cell?.index = indexPath.row
         return cell!
     }
     
@@ -87,26 +89,25 @@ class ChoiceInfoCollectionVC: UICollectionView ,UICollectionViewDelegate, UIColl
         return UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
-//    //MARK : -- Cell是否可以选中
+    //MARK : -- Cell是否可以选中
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-//
-//    //MARK : -- Cell多选时是否支持取消功能
+    //MARK : -- Cell多选时是否支持取消功能
     func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-//
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let cell = collectionView.cellForItem(at: indexPath) as? ChoiceInfoCell
-        
-//        cell?.line.backgroundColor = UIColor.orange
-        if selectDelegate != nil {
-            selectDelegate?.didSelectItem(cell!, indexPath.row, indexPath.row%2 == 0 ? true : false)
+        let model = data_Source[(indexPath.row)] as? ChoiceModel
+        if selectedItemBlock != nil {
+            selectedItemBlock!(cell!, (indexPath), (model?.type)!)
         }
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? ChoiceInfoCell
 //        cell?.line.backgroundColor = UIColor.yellow
@@ -126,8 +127,8 @@ class ChoiceInfoCollectionVC: UICollectionView ,UICollectionViewDelegate, UIColl
         let cell = collectionView.cellForItem(at: indexPath) as? ChoiceInfoCell
         cell?.backgroundColor = UIColor.white
     }
-    
-    
+
+   
 }
 
 

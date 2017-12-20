@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PickerViewType {
+enum PickerViewType: String{
     case datePicker
     case otherPicker
 }
@@ -32,12 +32,14 @@ class WJDatePickerView: UIView {
    
     fileprivate var btnColor : UIColor = UIColor.black
     
+    fileprivate var resultString: String?
+    
     /*
       ** UIPickerView
      */
     var components: NSMutableArray = NSMutableArray()
     var rows_components: NSMutableArray = NSMutableArray()
-    var selectPickerBlock: ( (_ result: String) -> ())?
+//    var selectPickerBlock: ( (_ result: String) -> ())? //暂时不用
     var result = String()
     
     
@@ -135,9 +137,10 @@ extension WJDatePickerView {
         //        if changeDateBlock != nil {
         //            changeDateBlock!(dateText)
         //        }
-        if trueBlock != nil {
-            trueBlock!(dateText)
-        }
+        resultString = dateText
+//        if trueBlock != nil {
+//            trueBlock!(dateText)
+//        }
     }
     
     @objc fileprivate func cancelBtnAction(_ sender: UIButton) {
@@ -148,10 +151,17 @@ extension WJDatePickerView {
     
     @objc fileprivate func trueBtnAction(_ sender: UIButton) {
         if pickerType == .datePicker {
-            changeDate(datePicker)
+//            changeDate(datePicker)
+            if trueBlock != nil {
+                trueBlock!(resultString!)
+            }
+            
         }else if pickerType == .otherPicker {
-            if selectPickerBlock != nil {
-                selectPickerBlock!(result)
+//            if selectPickerBlock != nil {
+//                selectPickerBlock!(result)
+//            }
+            if trueBlock != nil {
+                trueBlock!(resultString!)
             }
         }
         
@@ -177,13 +187,14 @@ extension WJDatePickerView: UIPickerViewDelegate, UIPickerViewDataSource{
         return rows_components.object(at: row) as? String
     }
     
-    //pickerView选中某一项后会触发
+    //pickerView滑动停止后会触发
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,
                     inComponent component: Int) {
-        result = rows_components.object(at: row) as! String
-        if selectPickerBlock != nil {
-            selectPickerBlock!(result)
-        }
+        resultString = rows_components.object(at: row) as? String
+        //
+//        if selectPickerBlock != nil {
+//            selectPickerBlock!(result)
+//        }
         
     }
     

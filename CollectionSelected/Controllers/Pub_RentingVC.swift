@@ -23,8 +23,9 @@ class Pub_RentingVC: UIViewController{
     }()
     
     var titles: NSMutableArray = ["TV","washer","空调","宽带","热水器","冰箱","床","燃气灶","沙发"]
-    var info: NSMutableArray = ["户型","面积","租金","楼层","装修","朝向"]
+    var dataSource: NSMutableArray = NSMutableArray()
    
+    var model: ChoiceModel?
     @objc fileprivate func dismissVC() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -34,6 +35,16 @@ class Pub_RentingVC: UIViewController{
         navigationItem.title = "租房"
         view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
+        
+        let choicePlistPath = Bundle.main.path(forResource: "Choice.plist", ofType: nil)
+        let data = NSMutableArray(contentsOfFile: choicePlistPath!)!
+      
+        for dict in data
+        {
+            model = ChoiceModel(dict: dict as! [String : Any])
+            dataSource.add(model!)
+        }
+       
         
         registerCell()
         publishTableView.reloadData()
@@ -74,7 +85,7 @@ extension Pub_RentingVC: UITableViewDelegate, UITableViewDataSource {
      
         
         if indexPath.row == 0 {
-            return   (getLinesWithThree(info) * choiceInfo_Item_height )
+            return   (getLinesWithThree(dataSource) * choiceInfo_Item_height )
             
         } else if indexPath.row == 1 {
             let total_Space = ((getLinesWithThree(titles)-1)*10)
@@ -89,10 +100,24 @@ extension Pub_RentingVC: UITableViewDelegate, UITableViewDataSource {
        
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: pubInfoCollCell_ID, for: indexPath) as? PubInfoCollectionCell
-            cell?.collection.data_Source = info
-            cell?.collection.selectDelegate = self
-            return cell!
+            let pickerCell = tableView.dequeueReusableCell(withIdentifier: pubInfoCollCell_ID, for: indexPath) as? PubInfoCollectionCell
+            pickerCell?.collection.data_Source = dataSource
+            pickerCell?.collection.selectedItemBlock = {[weak self] (cell, index, type) in
+//                let  toView = PickerVC(cell, index, type)
+            let toView = PickerInfoController(cell, index, type)
+
+                toView.resultBlock = { [weak self] (result_Str, index) in
+                 let current_Cell = pickerCell?.collection.cellForItem(at: index) as? ChoiceInfoCell
+                    current_Cell?.textField.text = result_Str
+                    
+                }
+            toView.info = (self?.dataSource)!
+            toView.title_Str = cell.title.text
+            let animator: FromBottomAnimator = FromBottomAnimator(presentedViewController: toView, presenting: self)
+            toView.transitioningDelegate = animator
+            self?.present(toView, animated: true, completion: nil)
+            }
+            return pickerCell!
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: choiceCollectionCell_Id, for: indexPath) as? PubChoiceCollectionCell
             cell?.multipleSelected = false
@@ -119,25 +144,8 @@ extension Pub_RentingVC : PubChoiceCollectionCellDelegate {
 }
 
 //MARK: -- ChoiceInfoSelectItemDelegate
-extension Pub_RentingVC : ChoiceInfoSelectItemDelegate {
-    func didSelectItem(_ cell: ChoiceInfoCell, _ item_Id: NSInteger, _ edit: Bool) {
-        
-        let toView = PickerInfoController()
-        toView.dataSource = info
-        toView.title_Str = cell.title.text!
-        toView.collection.cell = cell
-        toView.current_Index =  item_Id
-        toView.edit = edit
-        
-//        toView.resultBlock = {[weak self] (result_Str) in
-//            cell.textField.text = result_Str
-//            print("result --> \(result_Str)")
-//        }
-        let animator: FromBottomAnimator = FromBottomAnimator(presentedViewController: toView, presenting: self)
-        toView.transitioningDelegate = animator
-        present(toView, animated: true, completion: nil)
-        
-    }
+extension Pub_RentingVC {
+  
     
 }
 
