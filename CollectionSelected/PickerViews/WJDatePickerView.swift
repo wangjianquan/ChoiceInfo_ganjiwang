@@ -46,8 +46,13 @@ class WJDatePickerView: UIView {
     
     lazy var headerView: UIView = {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 40))
-        headerView.layer.borderColor = UIColor(white: 0.94, alpha: 1).cgColor
-        headerView.layer.borderWidth = 1.0
+        let white_num: CGFloat = 0.99
+        headerView.backgroundColor = UIColor(white: white_num, alpha: 1)
+        headerView.layer.shadowColor = UIColor.black.cgColor
+        headerView.layer.shadowOpacity = 0.7
+        headerView.layer.shadowOffset = CGSize(width:2, height: 2)
+        headerView.layer.shadowRadius = 4;//阴影半径，默认3
+        headerView.layer.masksToBounds = false
         return headerView
     }()
   
@@ -160,8 +165,9 @@ extension WJDatePickerView {
 //            if selectPickerBlock != nil {
 //                selectPickerBlock!(result)
 //            }
+            guard let resultString = resultString else{return}
             if trueBlock != nil {
-                trueBlock!(resultString!)
+                trueBlock!(resultString)
             }
         }
         
@@ -191,11 +197,10 @@ extension WJDatePickerView: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,
                     inComponent component: Int) {
         resultString = rows_components.object(at: row) as? String
-        //
-//        if selectPickerBlock != nil {
-//            selectPickerBlock!(result)
+//        if trueBlock != nil {
+//            trueBlock!(resultString!)
 //        }
-        
+//        
     }
     
 }

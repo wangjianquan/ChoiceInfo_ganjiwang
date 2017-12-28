@@ -30,10 +30,12 @@ class PickerInfoController: UIViewController {
     lazy var collection: ChoiceInfoCollectionVC = {
         let collection = ChoiceInfoCollectionVC(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: (getLinesWithThree(info) * choiceInfo_Item_height )), collectionViewLayout: UICollectionViewFlowLayout())
         collection.data_Source = info
+
         return collection
     }()
     lazy var datePicker: WJDatePickerView = {
-        let picker = WJDatePickerView(frame: CGRect(x: 0, y: collection.frame.size.height + 15, width: self.view.frame.width, height: 230))
+        let picker = WJDatePickerView(frame: CGRect(x: 0, y: collection.frame.size.height, width: self.view.frame.width, height: 230))
+        picker.cancelBtn.isHidden = true
         picker.components = [""]
         picker.pickerType = PickerViewType(rawValue: type!)
         picker.rows_components = pickerData
@@ -55,6 +57,8 @@ class PickerInfoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        
+        
         updatePreferredContentSizeWithTraitCollection(traitCollection: self.traitCollection)
         datePicker.title.text = "请选择 · "+title_Str!
       
